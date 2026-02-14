@@ -8,17 +8,18 @@ interface GenerateButtonProps {
   onClick: () => void;
 }
 
+const loadingTexts = [
+  'Thinking 💭',
+  'Designing email 🎨',
+  'Adding magic ✨',
+  'Painting gradients 🌈',
+  'Almost ready 🚀'
+];
+
 export default function GenerateButton({
   isLoading,
   onClick
 }: GenerateButtonProps) {
-  const loadingTexts = [
-    'Thinking 💭',
-    'Designing email 🎨',
-    'Adding magic ✨',
-    'Painting gradients 🌈',
-    'Almost ready 🚀'
-  ];
 
   const [index, setIndex] = useState(0);
 
@@ -39,9 +40,8 @@ export default function GenerateButton({
     <button
       onClick={onClick}
       disabled={isLoading}
-      className={`relative flex cursor-pointer items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white shadow-md transition-all hover:bg-blue-700 ${
-        isLoading ? 'cursor-wait opacity-90' : ''
-      }`}
+      className={`relative flex cursor-pointer items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white shadow-md transition-all hover:bg-blue-700 ${isLoading ? 'cursor-wait opacity-90' : ''
+        }`}
       style={{ minWidth: '200px' }} // ✅ Keeps button width stable
     >
       {isLoading ? (

@@ -133,7 +133,7 @@ const ImprovedDataTable = forwardRef<
         }
       });
       return filters;
-    }, []);
+    }, [columns]);
 
     useEffect(() => {
       setFilters(initialFilters);
@@ -505,8 +505,8 @@ const ImprovedDataTable = forwardRef<
                         >
                           {col.body
                             ? col.body(row, {
-                                rowIndex: startRecord + rowIndex - 1
-                              })
+                              rowIndex: startRecord + rowIndex - 1
+                            })
                             : col.field
                               ? row[col.field]
                               : '-'}

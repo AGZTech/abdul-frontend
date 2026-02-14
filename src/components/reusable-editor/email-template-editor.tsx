@@ -227,7 +227,7 @@ export default function ResuableTemplateEditor({
   });
 
   // Fetch subject name if subjectId is provided
-  const fetchSubjectName = async () => {
+  const fetchSubjectName = React.useCallback(async () => {
     if (!subjectId) return;
 
     try {
@@ -246,10 +246,10 @@ export default function ResuableTemplateEditor({
       setSubjectName('Default Template');
       setTemplateName('Default Template');
     }
-  };
+  }, [subjectId]);
 
   // Fetch email templates
-  const fetchEmailTemplates = async () => {
+  const fetchEmailTemplates = React.useCallback(async () => {
     try {
       setLoadingTemplates(true);
       const response = await GetCall('/api/company/email-template/get');
@@ -266,7 +266,7 @@ export default function ResuableTemplateEditor({
     } finally {
       setLoadingTemplates(false);
     }
-  };
+  }, []);
 
   // Create email template
   const handleCreateEmailTemplate = async () => {
@@ -317,14 +317,14 @@ export default function ResuableTemplateEditor({
     if (selectedEmailTemplate) {
       onTemplateIdChange(parseInt(selectedEmailTemplate));
     }
-  }, [selectedEmailTemplate]);
+  }, [selectedEmailTemplate, onTemplateIdChange]);
 
   useEffect(() => {
     fetchEmailTemplates();
     if (subjectId) {
       fetchSubjectName();
     }
-  }, [subjectId]);
+  }, [subjectId, fetchEmailTemplates, fetchSubjectName]);
 
   useEffect(() => {
     if (

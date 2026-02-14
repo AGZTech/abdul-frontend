@@ -36,7 +36,7 @@ export default function TopNav() {
                             alt="Logo"
                             className="dark:invert"
                         /> */}
-                        <h1>Abdul's Garage</h1>
+                        <h1>Abdul&apos;s Garage</h1>
                     </Link>
                 </div>
 

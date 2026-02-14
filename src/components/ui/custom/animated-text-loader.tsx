@@ -1,14 +1,15 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+const loadingTexts = [
+  'Checking data integrity',
+  'Validating email formats',
+  'Filtering out invalid entries',
+  'Ensuring everything looks good',
+  'Finalizing validation report'
+];
+
 export default function AnimatedLoadingText() {
-  const loadingTexts = [
-    'Checking data integrity',
-    'Validating email formats',
-    'Filtering out invalid entries',
-    'Ensuring everything looks good',
-    'Finalizing validation report'
-  ];
 
   const [index, setIndex] = useState(0);
 

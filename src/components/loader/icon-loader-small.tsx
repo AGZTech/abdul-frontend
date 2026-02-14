@@ -1,14 +1,16 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 export default function IconLoaderSmall() {
   return (
     <div className='flex flex-col items-center justify-center gap-4'>
       <div className='relative h-13 w-13'>
-        <img
+        <Image
           src='/assets/icon.svg'
           alt='Icon outline'
-          className='absolute inset-0 h-full w-full opacity-20'
+          fill
+          className='absolute inset-0 object-contain opacity-20'
         />
         <div
           className='absolute inset-0 h-full w-full'
