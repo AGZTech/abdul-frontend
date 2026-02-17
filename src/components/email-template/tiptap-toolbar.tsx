@@ -22,7 +22,7 @@ export default function TiptapToolbar({ editor }: TiptapToolbarProps) {
     }
 
     return (
-        <div className="border border-input bg-transparent rounded-t-md p-1 flex flex-wrap gap-1 items-center">
+        <div className="border border-input bg-transparent rounded-md mb-2 p-1 flex flex-wrap gap-1">
             <Toggle
                 size="sm"
                 pressed={editor.isActive('bold')}
@@ -52,8 +52,7 @@ export default function TiptapToolbar({ editor }: TiptapToolbarProps) {
                 <Strikethrough className="h-4 w-4" />
             </Toggle>
 
-            <div className="w-px h-6 bg-border mx-1" />
-
+            {/* Alignment */}
             <Toggle
                 size="sm"
                 pressed={editor.isActive({ textAlign: 'left' })}

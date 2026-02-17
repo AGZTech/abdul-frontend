@@ -20,7 +20,6 @@ export function BillPreviewModal({ isOpen, onClose, vehicleData, services, disco
 
     const handlePrint = useReactToPrint({
         contentRef: contentRef,
-        documentTitle: "Invoice",
     });
 
     return (

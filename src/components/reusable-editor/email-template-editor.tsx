@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';
@@ -35,7 +35,6 @@ import { Calendar as CalendarIcon, Eye, Code, Paperclip } from 'lucide-react';
 import { format } from 'date-fns';
 import TiptapToolbar from '@/components/email-template/tiptap-toolbar';
 import PageContainer from '@/components/layout/page-container';
-import { WizardTabs } from '@/components/wizard/WizardTabs';
 import {
   Dialog,
   DialogContent,
@@ -227,7 +226,7 @@ export default function ResuableTemplateEditor({
   });
 
   // Fetch subject name if subjectId is provided
-  const fetchSubjectName = React.useCallback(async () => {
+  const fetchSubjectName = useCallback(async () => {
     if (!subjectId) return;
 
     try {

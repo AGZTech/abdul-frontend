@@ -1,4 +1,6 @@
 'use client';
+import React from 'react';
+
 import Image from 'next/image';
 
 export default function IconLoaderSmall() {
@@ -9,7 +11,7 @@ export default function IconLoaderSmall() {
           src='/assets/icon.svg'
           alt='Icon outline'
           fill
-          className='opacity-20'
+          className='object-contain opacity-20'
         />
         <div
           className='absolute inset-0 h-full w-full'

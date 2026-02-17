@@ -130,7 +130,6 @@ export default function GarageManagement() {
     });
 
     // Fetch Dashboard Stats
-    // Fetch Dashboard Stats
     React.useEffect(() => {
         const fetchStats = async () => {
             try {
@@ -151,7 +150,6 @@ export default function GarageManagement() {
     // Stock Items State
     const [stockItems, setStockItems] = useState<StockItem[]>([]);
 
-    // Fetch Products
     // Fetch Products
     React.useEffect(() => {
         const fetchProducts = async () => {

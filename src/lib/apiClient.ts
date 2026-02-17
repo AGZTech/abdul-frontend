@@ -2,25 +2,13 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { log } from 'console';
 import { get as lodashGet } from 'lodash';
 
-
-
-let API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-
-console.log('Original Env URL:', process.env.NEXT_PUBLIC_BASE_URL);
+const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 if (!API_BASE_URL) {
   console.error(
-    'API base URL is not configured. Please set NEXT_PUBLIC_BASE_URL in your .env file.'
+    'API base URL is not configured. Please set NEXT_PUBLIC_API_BASE_URL in your .env.local file.'
   );
-  // Fallback for debugging if env fails completely
-  API_BASE_URL = 'https://abdul-backend-production.up.railway.app';
-} else if (!API_BASE_URL.startsWith('http')) {
-  API_BASE_URL = `https://${API_BASE_URL}`;
 }
-
-console.log('Final Configured API URL:', API_BASE_URL);
-
-
 
 class ApiClientError extends Error {
   public statusCode: number;

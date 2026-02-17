@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 const loadingTexts = [
   'Checking data integrity',
   'Validating email formats',

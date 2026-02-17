@@ -72,7 +72,7 @@ export function FileUpload({
         .map((f) => f.file);
       onChange?.(validFiles);
     },
-    [files, maxFiles, validateFile, disabled, onChange]
+    [files, maxFiles, disabled, onChange, validateFile]
   );
 
   const handleDrag = useCallback(

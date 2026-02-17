@@ -26,7 +26,7 @@ export default function GenerateButton({
   // ✅ Calculate longest text width
   const longestText = useMemo(() => {
     return loadingTexts.reduce((a, b) => (a.length > b.length ? a : b), '');
-  }, [loadingTexts]);
+  }, []);
 
   useEffect(() => {
     if (!isLoading) return;
